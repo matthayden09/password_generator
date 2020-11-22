@@ -8,47 +8,11 @@ function generatePassword() {
   var userChoice = [];
   var upperChoice = confirm("Include uppercase letter?");
   var lowerChoice = confirm("Include lowercase letters?");
-  var specailChoice = confirm("Include special characters?");
+  var specialChoice = confirm("Include special characters?");
   var numberChoice = confirm("Include numbers?");
 
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
-
-  // if loop when cancel is selected
-  if ((upperChoice === false) && (lowerChoice === false) && (specialChoice === false) && (numberChoice === false)) {
-    alert('Need to Confirm Condition');
-    var upperChoice = confirm("Include uppercase letter?");
-    var lowerChoice = confirm("Include lowercase letters?");
-    var specailChoice = confirm("Include special characters?");
-    var numberChoice = confirm("Include numbers?");
-
-  }
-
-  // upperCase if loop
-  if (upperChoice){
-    for (var i = 0; i < upperCase.length; i++){
-      userChoice.push(upperCase[i]);
-    }
-  }
-  // lowerCase if loop
-  if (lowerChoice){
-    for (var i = 0; i < lowerCase.length; i++){
-      userChoice.push(lowerCase[i]);
-    }
-  }
-  // specialChar if loop
-  if (specialChoice){
-    for (var i = 0; i < specialChar.length; i++){
-      userChoice.push(specialChar[i]);
-    }
-  }
-  // numbers if loop
-  if (numberChoice){
-    for (var i = 0; i < numbers.length; i++){
-      userChoice.push(numbers[i]);
-    }
-  }
-
 
   // password criteria
   var upperCase = [
@@ -60,50 +24,82 @@ function generatePassword() {
   var specialChar = [
     "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "`", "~", "{", "}", "[", "]", "|"
   ];
-  var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+  var numbers = [
+    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
   ];
+
+  // if loop when cancel is selected
+  if ((upperChoice === false) && (lowerChoice === false) && (specialChoice === false) && (numberChoice === false)) {
+    alert('Need to Confirm Condition');
+    var upperChoice = confirm("Include uppercase letter?");
+    var lowerChoice = confirm("Include lowercase letters?");
+    var specialChoice = confirm("Include special characters?");
+    var numberChoice = confirm("Include numbers?");
+  }
 
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
   var passwordLength = prompt("Please choose between 8-128 for your password length.");
   if ((passwordLength < 8) || (passwordLength > 128)) {
-    alert("Password must be a minimum of 8 characters and a maximum of 128")
+    alert("Password must be a minimum of 8 characters and a maximum of 128");
+    passwordLength = prompt("Choose Length");
   }
-
-
-  // WHEN prompted for character types to include in the password
-  // THEN I choose lowercase, uppercase, numeric, and/or special characters
 
   // WHEN I answer each prompt
   // THEN my input should be validated and at least one character type should be selected
 
-  // WHEN all prompts are answered
-  // THEN a password is generated that matches the selected criteria
-  var newPassword = [];
-    for(i=0; i < passwordLength; i++){
-      newPassword.push(userChoice[Math.floor(Math.random()* userChoice.length)]);
+  // upperCase if loop
+  if (upperChoice) {
+    for (var i = 0; i < upperCase.length; i++) {
+      userChoice.push(upperCase[i]);
+    }
+  }
+  // lowerCase if loop
+  if (lowerChoice) {
+    for (var i = 0; i < lowerCase.length; i++) {
+      userChoice.push(lowerCase[i]);
+    }
+  }
+  // specialChar if loop
+  if (specialChoice) {
+    for (var i = 0; i < specialChar.length; i++) {
+      userChoice.push(specialChar[i]);
+    }
+  }
+  // numbers if loop
+  if (numberChoice) {
+    for (var i = 0; i < numbers.length; i++) {
+      userChoice.push(numbers[i]);
     }
 
-    return(newPassword.join(""));
+    // WHEN all prompts are answered
+    // THEN a password is generated that matches the selected criteria
+    var newPassword = [];
+    for (i = 0; i < passwordLength; i++) {
+      newPassword.push(userChoice[Math.floor(Math.random() * userChoice.length)]);
+    }
+
+    // WHEN the password is generated
+    // THEN the password is either displayed in an alert or written to the page
+    return (newPassword.join(""));
   }
+}
 
-  // WHEN the password is generated
-  // THEN the password is either displayed in an alert or written to the page
-
-
-  // Assignment Code
-  var generateBtn = document.querySelector("#generate");
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
 
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-    passwordText.value = password;
+  passwordText.value = password;
 
-  }
+}
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 
