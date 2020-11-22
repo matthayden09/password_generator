@@ -17,6 +17,11 @@ images folder
 
 * Screenshots
 
+![main page](https://github.com/matthayden09/password_generator/blob/main/images/main_page.png)
+![prompt bar](https://github.com/matthayden09/password_generator/blob/main/images/prompt.png)
+![password length](https://github.com/matthayden09/password_generator/blob/main/images/password_length.png)
+![generated password](https://github.com/matthayden09/password_generator/blob/main/images/generated.png)
+
 
 
 
