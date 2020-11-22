@@ -4,6 +4,12 @@ function generatePassword(){
 
   // WHEN I click the button to generate a password
   // THEN I am presented with a series of prompts for password criteria
+ 
+  var userChoice = [];
+  var upperCase = confirm("Include uppercase letter?");
+  var lowerCase = confirm("Include lowercase letters?");
+  var specailChar = confirm("Include special characters?");
+  var numbers = confirm("Include numbers?")
 
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
