@@ -1,3 +1,25 @@
 # password_generator
 
-I was unable to finish this assignment, however I managed to get some of the code in. I know I have pieces missing but I ran out of time. I will continue to add to this and re-submit it at a later date so I know I fully understand the concepts.
+* What's Included
+
+This is a random password generator that will output a random combination of characters.
+
+* How It Works
+
+When the user clicks the "Generate Password" button, they will be shown a series of prompts that they answer along with a prompt for selecting password length. Once all of the prompts have been answered, the website will generate a random combination of their selected characters. This can then be copied and pasted elsewhere.
+
+* Files included
+
+index.html
+script.js
+style.css
+images folder
+
+* Screenshots
+
+
+
+
+
+
+

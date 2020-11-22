@@ -4,6 +4,7 @@ function generatePassword() {
 
   // WHEN I click the button to generate a password
   // THEN I am presented with a series of prompts for password criteria
+  
   alert("Select OK for YES or Cancel for NO")
   var userChoice = [];
   var upperChoice = confirm("Include uppercase letter?");
@@ -39,6 +40,7 @@ function generatePassword() {
 
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
+  
   var passwordLength = prompt("Please choose between 8-128 for your password length.");
   if ((passwordLength < 8) || (passwordLength > 128)) {
     alert("Password must be a minimum of 8 characters and a maximum of 128");
@@ -48,25 +50,24 @@ function generatePassword() {
   // WHEN I answer each prompt
   // THEN my input should be validated and at least one character type should be selected
 
-  // upperCase if loop
   if (upperChoice) {
     for (var i = 0; i < upperCase.length; i++) {
       userChoice.push(upperCase[i]);
     }
   }
-  // lowerCase if loop
+ 
   if (lowerChoice) {
     for (var i = 0; i < lowerCase.length; i++) {
       userChoice.push(lowerCase[i]);
     }
   }
-  // specialChar if loop
+ 
   if (specialChoice) {
     for (var i = 0; i < specialChar.length; i++) {
       userChoice.push(specialChar[i]);
     }
   }
-  // numbers if loop
+ 
   if (numberChoice) {
     for (var i = 0; i < numbers.length; i++) {
       userChoice.push(numbers[i]);
@@ -74,6 +75,7 @@ function generatePassword() {
 
     // WHEN all prompts are answered
     // THEN a password is generated that matches the selected criteria
+    
     var newPassword = [];
     for (i = 0; i < passwordLength; i++) {
       newPassword.push(userChoice[Math.floor(Math.random() * userChoice.length)]);
@@ -81,6 +83,7 @@ function generatePassword() {
 
     // WHEN the password is generated
     // THEN the password is either displayed in an alert or written to the page
+   
     return (newPassword.join(""));
   }
 }
