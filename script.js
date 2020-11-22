@@ -79,6 +79,13 @@ function generatePassword() {
 
   // WHEN all prompts are answered
   // THEN a password is generated that matches the selected criteria
+  var newPassword = [];
+    for(i=0; i < passwordLength; i++){
+      newPassword.push(userChoice[Math.floor(Math.random()* userChoice.length)]);
+    }
+
+    return(newPassword.join(""));
+  }
 
   // WHEN the password is generated
   // THEN the password is either displayed in an alert or written to the page
@@ -100,4 +107,3 @@ function generatePassword() {
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
 
-}
