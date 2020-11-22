@@ -6,14 +6,26 @@ function generatePassword(){
   // THEN I am presented with a series of prompts for password criteria
  
   var userChoice = [];
-  var upperCase = confirm("Include uppercase letter?");
-  var lowerCase = confirm("Include lowercase letters?");
-  var specailChar = confirm("Include special characters?");
-  var numbers = confirm("Include numbers?")
+  var upperChoice = confirm("Include uppercase letter?");
+  var lowerChoice = confirm("Include lowercase letters?");
+  var specailChoice = confirm("Include special characters?");
+  var numberChoice = confirm("Include numbers?")
 
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
 
+  // password criteria
+  var upperCase = [
+    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+  ];
+  var lowerCase = [
+    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+  ];
+  var specialChar = [
+    "!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "`", "~", "{", "}", "[", "]", "|"
+  ];
+  var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
+  ];
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
 
