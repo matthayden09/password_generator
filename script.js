@@ -72,6 +72,7 @@ function generatePassword() {
     for (var i = 0; i < numbers.length; i++) {
       userChoice.push(numbers[i]);
     }
+  }
 
     // WHEN all prompts are answered
     // THEN a password is generated that matches the selected criteria
@@ -85,7 +86,6 @@ function generatePassword() {
     // THEN the password is either displayed in an alert or written to the page
    
     return (newPassword.join(""));
-  }
 }
 
 // Assignment Code

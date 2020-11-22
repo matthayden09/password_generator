@@ -22,6 +22,10 @@ images folder
 ![password length](https://github.com/matthayden09/password_generator/blob/main/images/password_length.png)
 ![generated password](https://github.com/matthayden09/password_generator/blob/main/images/generated.png)
 
+* Notes to Grader
+
+I continued to update this after it was submitted so please keep me informed with which version the grade reflects. This was a very difficult assigment for me so I am looking forward to reading the constuctive criticism in order to improve on what I have done so far.
+
 
 
 
