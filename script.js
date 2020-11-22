@@ -1,18 +1,54 @@
 
 // GIVEN I need a new, secure password
-function generatePassword(){
+function generatePassword() {
 
   // WHEN I click the button to generate a password
   // THEN I am presented with a series of prompts for password criteria
- 
+  alert("Select OK for YES or Cancel for NO")
   var userChoice = [];
   var upperChoice = confirm("Include uppercase letter?");
   var lowerChoice = confirm("Include lowercase letters?");
   var specailChoice = confirm("Include special characters?");
-  var numberChoice = confirm("Include numbers?")
+  var numberChoice = confirm("Include numbers?");
 
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
+
+  // if loop when cancel is selected
+  if ((upperChoice === false) && (lowerChoice === false) && (specialChoice === false) && (numberChoice === false)) {
+    alert('Need to Confirm Condition');
+    var upperChoice = confirm("Include uppercase letter?");
+    var lowerChoice = confirm("Include lowercase letters?");
+    var specailChoice = confirm("Include special characters?");
+    var numberChoice = confirm("Include numbers?");
+
+  }
+
+  // upperCase if loop
+  if (upperChoice){
+    for (var i = 0; i < upperCase.length; i++){
+      userChoice.push(upperCase[i]);
+    }
+  }
+  // lowerCase if loop
+  if (lowerChoice){
+    for (var i = 0; i < lowerCase.length; i++){
+      userChoice.push(lowerCase[i]);
+    }
+  }
+  // specialChar if loop
+  if (specialChoice){
+    for (var i = 0; i < specialChar.length; i++){
+      userChoice.push(specialChar[i]);
+    }
+  }
+  // numbers if loop
+  if (numberChoice){
+    for (var i = 0; i < numbers.length; i++){
+      userChoice.push(numbers[i]);
+    }
+  }
+
 
   // password criteria
   var upperCase = [
@@ -26,8 +62,14 @@ function generatePassword(){
   ];
   var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
   ];
+
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
+  var passwordLength = prompt("Please choose between 8-128 for your password length.");
+  if ((passwordLength < 8) || (passwordLength > 128)) {
+    alert("Password must be a minimum of 8 characters and a maximum of 128")
+  }
+
 
   // WHEN prompted for character types to include in the password
   // THEN I choose lowercase, uppercase, numeric, and/or special characters
@@ -51,7 +93,7 @@ function generatePassword(){
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
 
-    passwordText.value = password; 
+    passwordText.value = password;
 
   }
 
